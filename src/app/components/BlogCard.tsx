@@ -8,9 +8,23 @@ type Props = {
   title: string;
   image: string;
   snippet: string;
+  highlight?: string;
 };
 
-const BlogCard = ({ id, title, image, snippet }: Props) => {
+const BlogCard = ({ id, title, image, snippet, highlight }: Props) => {
+  const highlightMatch = (text: string, match?: string) => {
+    if (!match) return text;
+    const parts = text.split(new RegExp(`(${match})`, "gi"));
+    return parts.map((part, i) =>
+      part.toLowerCase() === match.toLowerCase() ? (
+        <span key={i} className="text-red-500 font-bold">
+          {part}
+        </span>
+      ) : (
+        part
+      )
+    );
+  };
   return (
     <>
       <Link
@@ -26,7 +40,7 @@ const BlogCard = ({ id, title, image, snippet }: Props) => {
         />
         <div className="p-4">
           <h2 className="text-lg font-semibold mb-2 text-gray-900 hover:underline">
-            {title}
+            {highlightMatch(title, highlight)}
           </h2>
           <p className="text-gray-600 text-sm truncate">{snippet}</p>
         </div>

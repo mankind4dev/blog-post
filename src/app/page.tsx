@@ -38,6 +38,7 @@ export default function Page() {
               title={post.title}
               image={post.image}
               snippet={post.snippet}
+              highlight={search}
             />
           ))
         ) : (
