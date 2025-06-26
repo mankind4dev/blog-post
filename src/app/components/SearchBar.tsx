@@ -21,7 +21,7 @@ const SearchBar = ({ value, onChange }: SearchProps) => {
       placeholder="Search posts..."
       value={value}
       onChange={(e) => onChange(e.target.value)}
-      className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 mb-4"
+      className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-200 mb-4"
     />
   );
 };

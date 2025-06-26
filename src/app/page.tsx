@@ -14,7 +14,7 @@ interface PostType {
 
 export default function Page() {
   const [search, setSearch] = useState<string>("");
-  const [filtered, setFiltered] = useState<PostType[]>([...postsData]); // ✅ FIX
+  const [filtered, setFiltered] = useState<PostType[]>([...postsData]);
 
   useEffect(() => {
     const result = postsData.filter((post) =>
