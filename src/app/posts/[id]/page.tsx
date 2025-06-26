@@ -28,6 +28,7 @@ const PostPage = ({ params }: PostProps) => {
           height={400}
           className="rounded mb-6 object-cover w-full"
         />
+        <p className="text-gray-400 font-bold leading-relaxed">{post.content}</p>
         <p className="text-gray-200 leading-relaxed">{post.snippet}</p>
       </div>
       <div className="mt-4">
