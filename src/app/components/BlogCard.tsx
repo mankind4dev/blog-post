@@ -12,7 +12,7 @@ type Props = {
   highlight?: string;
 };
 
-const BlogCard = ({ id, title, image, snippet, highlight,content }: Props) => {
+const BlogCard = ({ id, title, image, snippet, highlight }: Props) => {
   const highlightMatch = (text: string, match?: string) => {
     if (!match) return text;
     const parts = text.split(new RegExp(`(${match})`, "gi"));
